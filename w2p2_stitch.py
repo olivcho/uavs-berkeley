@@ -33,15 +33,12 @@ num_cols = 4
 num_rows = math.ceil(len(frames) / num_cols)
 fig, axes = plt.subplots(num_rows, num_cols)
 axes = axes.flatten()
-
 for i, frame in enumerate(frames): # Print out individual frames in a grid
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     axes[i].imshow(frame)
     axes[i].axis("off")
-
 for i in range(len(frames), len(axes)): # Hide unused subplots
     axes[i].axis("off")
-
 plt.suptitle("Individual Frames", fontsize=16)
 plt.tight_layout()
 
